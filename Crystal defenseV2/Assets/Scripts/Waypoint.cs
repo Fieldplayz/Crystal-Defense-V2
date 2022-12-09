@@ -6,6 +6,7 @@ public class Waypoint : MonoBehaviour
 {
     [SerializeField] Tower balista;
     [SerializeField] Tower turret;
+    [SerializeField] Tower booster;
 
 
     [SerializeField] bool isPlaceable;
@@ -27,6 +28,12 @@ public class Waypoint : MonoBehaviour
             else if(tower == 2)
             {
                 bool isPlaced = turret.CreateTower(turret, transform.position);
+                isPlaceable = !isPlaced;
+                PlayerPrefs.SetInt("Tower", 0);
+            }
+            else if(tower == 3)
+            {
+                bool isPlaced = turret.CreateTower(booster, transform.position);
                 isPlaceable = !isPlaced;
                 PlayerPrefs.SetInt("Tower", 0);
             }

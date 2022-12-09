@@ -20,4 +20,9 @@ public class TowerSelector : MonoBehaviour
         PlayerPrefs.SetInt("Tower", 2);
     }
 
+    public void Booster()
+    {
+        PlayerPrefs.SetInt("Tower", 3);
+    }
+
 }

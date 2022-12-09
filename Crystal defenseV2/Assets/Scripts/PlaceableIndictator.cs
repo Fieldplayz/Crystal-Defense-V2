@@ -10,6 +10,9 @@ public class PlaceableIndictator : MonoBehaviour
     [SerializeField] GameObject canPlaceTurret;
     [SerializeField] GameObject cannotPlaceTurret;
 
+    [SerializeField] GameObject canPlaceBooster;
+    [SerializeField] GameObject cannotPlaceBooster;
+
     bool isPlaceable;
 
     int currentBalance;
@@ -56,6 +59,20 @@ public class PlaceableIndictator : MonoBehaviour
                     canPlaceTurret.SetActive(true);
                 }
             }
+
+            else if(tower == 3)
+            {
+                if(currentBalance < 200)
+                {
+                    cannotPlaceBooster.SetActive(true);
+                    canPlaceBooster.SetActive(false);
+                }
+                else
+                {
+                    cannotPlaceBooster.SetActive(false);
+                    canPlaceBooster.SetActive(true);
+                }
+            }
             
         }
        
@@ -68,5 +85,8 @@ public class PlaceableIndictator : MonoBehaviour
 
         cannotPlaceTurret.SetActive(false);
         canPlaceTurret.SetActive(false);
+
+        canPlaceBooster.SetActive(false);
+        cannotPlaceBooster.SetActive(false);
     }
 }

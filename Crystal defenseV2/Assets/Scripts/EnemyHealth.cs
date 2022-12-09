@@ -6,11 +6,13 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Enemy))]
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable, IKill
 {
     [SerializeField] float health = 100;
     [SerializeField] float ballistaDamage = 10;
+    [SerializeField] float boostedBallistaDamage = 13;
     [SerializeField] float turretDamage = 15;
+    [SerializeField] float boostedTurretDamage = 18;
     [Tooltip("Adds amount to max Hit Points when enemy dies")]
     [SerializeField] int difficultyRamp = 1;
     [SerializeField] private HealthBar healthBar;
@@ -35,27 +37,41 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if(other.tag == "Ballista")
+        if (other.tag == "Ballista")
         {
-            
-            ProcessHit(ballistaDamage);
+            Damage(ballistaDamage);
+        }
+        else if (other.tag == "BoostedBallista")
+        {
+            Damage(boostedBallistaDamage);
         }
         else if (other.tag == "Turret")
         {
-            ProcessHit(turretDamage);
+            Damage(turretDamage);
+        }
+        else if (other.tag == "BoostedTurret")
+        {
+            Damage(boostedTurretDamage);
         }
     }
 
-    private void ProcessHit(float damage)
+    
+
+    public void Damage(float damage)
     {
         currentHealth = currentHealth - damage;
         healthBar.UpdateHealthBar(health, currentHealth);
 
         if (currentHealth <= 0)
         {
-            enemy.RewardGold();
-            health += difficultyRamp;
-            gameObject.SetActive(false);
+            Kill();
         }
+    }
+
+    public void Kill()
+    {
+        enemy.RewardGold();
+        health += difficultyRamp;
+        gameObject.SetActive(false);
     }
 }

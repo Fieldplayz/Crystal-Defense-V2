@@ -8,6 +8,8 @@ TagManager:
   - Turret
   - Ballista
   - Enemy
+  - BoostedTurret
+  - BoostedBallista
   layers:
   - Default
   - TransparentFX

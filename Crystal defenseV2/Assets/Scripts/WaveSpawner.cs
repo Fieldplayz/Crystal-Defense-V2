@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 if (canAnimate)
                 {
-                    if(currentWaveNumber == 4)
+                    if(currentWaveNumber == 6)
                     {
                         finalSpawnButton.gameObject.SetActive(true);
                         nextSpawnButton.gameObject.SetActive(false);

@@ -22,6 +22,7 @@ public class TargetLocator : MonoBehaviour
     void Update()
     {
         enemies = FindObjectsOfType<Enemy>();
+        projectileParticles.tag = gameObject.tag;
 
         if (enemies.Length > 0)
         {
