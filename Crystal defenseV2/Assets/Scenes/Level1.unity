@@ -8185,6 +8185,20 @@ MonoBehaviour:
     - {fileID: 716517066815442176, guid: 7c6a2abda3d7ec84dba00fa7a71c0c3b, type: 3}
     - {fileID: 2141805906507996215, guid: 498f5419caff8634492389c374236d5d, type: 3}
     spawnInterval: 1.5
+  - waveName: Wave 7
+    numberEnemy: 14
+    typeEnemies:
+    - {fileID: 716517066815442176, guid: 7c6a2abda3d7ec84dba00fa7a71c0c3b, type: 3}
+    - {fileID: 2141805906507996215, guid: 498f5419caff8634492389c374236d5d, type: 3}
+    - {fileID: 8880785581540560948, guid: 1165d316b533077408bb5878e7099c5e, type: 3}
+    spawnInterval: 1.8
+  - waveName: Wave 8
+    numberEnemy: 16
+    typeEnemies:
+    - {fileID: 716517066815442176, guid: 7c6a2abda3d7ec84dba00fa7a71c0c3b, type: 3}
+    - {fileID: 2141805906507996215, guid: 498f5419caff8634492389c374236d5d, type: 3}
+    - {fileID: 8880785581540560948, guid: 1165d316b533077408bb5878e7099c5e, type: 3}
+    spawnInterval: 1.8
   spawnPoints:
   - {fileID: 913917671}
   nextSpawnButton: {fileID: 1561829822}
