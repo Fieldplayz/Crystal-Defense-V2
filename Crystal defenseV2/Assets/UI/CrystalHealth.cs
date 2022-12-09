@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CrystalHealth : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class CrystalHealth : MonoBehaviour
     [Range(0.1f, 5f)]
     public float damageCooldownTime;
 
-    [Header("Damage Effect :")]
-    public GameObject damageEffect;
+   /* [Header("Damage Effect :")]
+    public GameObject damageEffect;*/
 
     [HideInInspector]
     public float currentHealth;
@@ -41,7 +42,7 @@ public class CrystalHealth : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            //Dood.
+            SceneManager.LoadScene(3);
         }
     }
 
@@ -53,7 +54,6 @@ public class CrystalHealth : MonoBehaviour
         isDamageable = false;
         currentHealth -= damage;
         healthBar.value = currentHealth;
-        Instantiate(damageEffect, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(damageCooldownTime);
         isDamageable = true;
     }
