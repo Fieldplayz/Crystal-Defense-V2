@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CrystalHealth : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class CrystalHealth : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            //Dood.
+            SceneManager.LoadScene(3);
         }
     }
 

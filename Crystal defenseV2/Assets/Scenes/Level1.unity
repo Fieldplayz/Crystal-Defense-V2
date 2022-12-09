@@ -12280,7 +12280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 500296431}
   maxHealth: 100
-  enemyDamageValue: 2
+  enemyDamageValue: 5
   damageCooldownTime: 2
   currentHealth: 0
 --- !u!114 &1827209663
