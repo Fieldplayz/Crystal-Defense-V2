@@ -20,8 +20,8 @@ public class CrystalHealth : MonoBehaviour
     [Range(0.1f, 5f)]
     public float damageCooldownTime;
 
-    [Header("Damage Effect :")]
-    public GameObject damageEffect;
+   /* [Header("Damage Effect :")]
+    public GameObject damageEffect;*/
 
     [HideInInspector]
     public float currentHealth;
@@ -53,7 +53,6 @@ public class CrystalHealth : MonoBehaviour
         isDamageable = false;
         currentHealth -= damage;
         healthBar.value = currentHealth;
-        Instantiate(damageEffect, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(damageCooldownTime);
         isDamageable = true;
     }
