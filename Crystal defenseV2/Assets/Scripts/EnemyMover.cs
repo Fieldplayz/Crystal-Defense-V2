@@ -47,8 +47,8 @@ public class EnemyMover : MonoBehaviour
 
     void FinishPath()
     {
-        enemy.StealGold();
-        gameObject.SetActive(false);
+        //enemy.StealGold();
+        //gameObject.SetActive(false);
     }
 
     IEnumerator FollowPath()
